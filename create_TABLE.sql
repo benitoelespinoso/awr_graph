@@ -1,0 +1,110 @@
+
+CREATE TABLE PERFSTAT.T_TIME_MOD
+(
+  FECHA      DATE,
+  STATNAM    VARCHAR2(64 BYTE)                  NOT NULL,
+  TDIFS      NUMBER,
+  PCTDB      NUMBER,
+  ORDER_COL  NUMBER
+)
+TABLESPACE TS_STAT_DAT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCACHE;
+
+
+CREATE TABLE PERFSTAT.TOP_N_WAIT
+(
+  FECHA   DATE,
+  EVENT   VARCHAR2(64 BYTE)                     NOT NULL,
+  WAITS   NUMBER,
+  TIME    NUMBER,
+  AVWAIT  NUMBER
+)
+TABLESPACE TS_STAT_DAT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCACHE;
+
+
+CREATE TABLE PERFSTAT.T_WAITS
+(
+  SAMPLE_TIME     VARCHAR2(16 BYTE),
+  HORA            NUMBER,
+  SCHEDULER       NUMBER,
+  UIO             NUMBER,
+  SIO             NUMBER,
+  CONCURRENCY     NUMBER,
+  APPLICATION     NUMBER,
+  COMMIT          NUMBER,
+  CONFIGURATION   NUMBER,
+  ADMINISTRATIVE  NUMBER,
+  NETWORK         NUMBER,
+  QUEUEING        NUMBER,
+  CLUST           NUMBER,
+  OTHER           NUMBER,
+  NUM_CPU         NUMBER
+)
+TABLESPACE TS_STAT_DAT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCACHE;
+
+
+CREATE TABLE PERFSTAT.T_CPU
+(
+  SAMPLE_TIME  VARCHAR2(16 BYTE),
+  HORA         NUMBER,
+  TOTAL_CPU    NUMBER,
+  F_CPU        NUMBER,
+  B_CPU        NUMBER,
+  CPU_MAQUINA  NUMBER
+)
+TABLESPACE TS_STAT_DAT
+PCTUSED    0
+PCTFREE    10
+INITRANS   1
+MAXTRANS   255
+STORAGE    (
+            INITIAL          64K
+            NEXT             1M
+            MINEXTENTS       1
+            MAXEXTENTS       UNLIMITED
+            PCTINCREASE      0
+            BUFFER_POOL      DEFAULT
+           )
+LOGGING 
+NOCACHE;
