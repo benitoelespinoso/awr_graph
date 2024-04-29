@@ -1,9 +1,9 @@
 # awr_graph
 Useful info of ORACLE (awr) visualized with canvas.js
 
-# Welcome!
+# Previous
 
-AWR and PERFSTAT (statspack.snap) are running on database (take care with Licensing...)
+**AWR** and **PERFSTAT** (statspack.snap) are running on database (take care with Licensing...)
 
 You must execute on BBDD
 
@@ -13,19 +13,26 @@ You must execute on BBDD
 
 With SYS, for example.
 
-# Create Tables
+# Create Tables and Procedures 
 
-With user PERFSTAT you create some tables on BD executing *create_TABLE.sql* file
+With user **PERFSTAT** you create some tables on BD executing **create_TABLE.sql** file
+
+And then, execute **create_Proc.sql** file to create two proc. on database
+
+# Run the procedures 
+
+Every hour you execute:
+> execute PERFSTAT.proc_report_porhora;
+
+every day at > 15:00 (it's harcoded on the proc, get the info from 8h to 15h)
+> execute PERFSTAT.proc_report_diario(sysdate);
+
+# On unix server that runs httpd and can connect to DB 
+
+In a directory below a httpd server, you put **canvasjs.min.js** file. You can download from web.
+
+To run the report (i use to put on cron) you have to (daily) execute:
+
+> report.sh
 
 
-
-
-> ALTER SYSTEM SET CONTROL_MANAGEMENT_PACK_ACCESS= "DIAGNOSTIC+TUNING" scope=both;
-
-> execute dbms_workload_repository.modify_snapshot_settings(interval => 60)
-
-And 
-
-
-
-Hi! I'm your first Markdown file in **StackEdit**. If you want to learn about StackEdit, you can read me. If you want to play with Markdown, you can edit me. Once you have finished with me, you can create new files by opening the **file explorer** on the left corner of the navigation bar.
