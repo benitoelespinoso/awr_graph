@@ -13,7 +13,9 @@ You must execute on BBDD
 
 With SYS, for example.
 
+# Create Tables
 
+With user PERFSTAT you create some tables on BD executing *create_TABLE.sql* file
 
 
 
