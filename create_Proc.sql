@@ -1,4 +1,3 @@
-
 CREATE OR REPLACE PROCEDURE PERFSTAT.proc_report_diario(C_FECHA date)
 
 is
@@ -143,6 +142,11 @@ e.event   event
 
 commit;
 
+
+delete from perfstat.top_n_wait where event in 
+(select name from v$event_name where wait_class='Idle');
+
+commit;
 
 
 
@@ -291,4 +295,3 @@ commit;
 
 end;
 /
-
